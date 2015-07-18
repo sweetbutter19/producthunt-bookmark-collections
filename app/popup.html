@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css styles/main.css -->
+        <link href="styles/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <!-- endbuild -->
+    </head>
+    <body ng-app="bookmark-collections">
+        <div id="main_wrapper" ng-controller="MainController">
+            <header>
+                <div id="header-left">
+                    <img src="icons/while_logo.png" width="15" height="15" align="left"/>
+                    <h1 ng-if="(bookmarks|filter:query).length == 0">No collection yet</h1>
+                    <h1 ng-if="(bookmarks|filter:query).length == 1">{{ (bookmarks|filter:query).length }} collection</h1>
+                    <h1 ng-if="(bookmarks|filter:query).length > 1">{{ (bookmarks|filter:query).length }} collections</h1>
+                </div>
+                <input id="search" ng-model="query" placeholder="Search...">
+            </header>
+            <section id="collections">
+                <p ng-if="(bookmarks|filter:query).length < 1">Go to <a href="http://www.producthunt.com/collections" target="_blank">Product Hunt</a> to bookmark collections</p>
+                <ul ng-if="bookmarks.length >= 1">
+                    <li ng-repeat="bookmark in bookmarks | filter:query" style="position:relative;">
+                        <a target="_blank" ng-href="{{bookmark.url}}"><span class="title">{{bookmark.title}}</span> <span class="user">by {{bookmark.user}}</span></a>
+                        <span class="remove" ng-click="remove(bookmark.url)"><i class="fa fa-star-o"></i></span>
+                    </li>
+                </ul>
+            </section>
+
+            <a id="github" href="http://github.com/clemkn/producthunt-bookmark-collections" target="_blank"><i class="fa fa-github"></i></a>
+            <footer>Made by <a href="https://twitter.com/clemkn" target="_blank">@Clemkn</a></footer>
+        </div>
+
+        <!-- build:js scripts/modules.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <script src="js/storage.js"></script>
+
+        <!-- build:js scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/services/storage.service.js"></script>
+        <script src="scripts/controllers/main.controller.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>

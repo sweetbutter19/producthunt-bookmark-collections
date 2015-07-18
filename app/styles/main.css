@@ -1,0 +1,135 @@
+*:focus {
+	outline: 0;
+}
+
+a:focus {
+	outline: 0;
+}
+
+*::selection {
+	text-shadow: none;
+	background: #909090;
+	color: #fff;
+}
+
+body {
+  padding: 20px;
+  width: 300px;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+	background: #F2A43E;
+	padding: 10px;
+}
+
+header h1 {
+	font-size: 12px;
+	color: #fff;
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-left: 20px;
+}
+
+#header-left{
+	display: inline-block;
+	width:170px;
+}
+
+input#search{
+	width:100px;
+	border:0;
+	outline: 0;
+	border-radius:2px;
+	padding:2px 5px;
+	box-sizing: border-box;
+}
+
+#collections{
+	max-height: 200px;
+	overflow: scroll;
+	padding:10px;
+}
+
+#collections ul li a{
+	max-width:255px;
+}
+
+#collections ul li a .title{
+	font-weight: bold;
+}
+
+#collections ul li a .user{
+	font-size:10px;
+}
+
+#collections ul li .remove{
+	display:none;
+}
+
+#collections ul li:hover .remove{
+	display:block;
+}
+
+.remove{
+	position:absolute;
+	right:8px;
+	top:0;
+	bottom:0;
+	height:15px;
+	margin:0 auto;
+	line-height: 15px;
+	font-size:15px;
+	width:15px;
+	color:#F0A349;
+	margin:auto 0;
+}
+
+.remove:hover{
+	cursor:pointer;
+}
+
+#collections ul, #collections li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#collections li a {
+	display: block;
+	padding: 10px;
+	border-bottom: 1px solid #eee;
+	text-decoration: none;
+	color: #333;
+}
+
+#collections li a:hover {
+	background: #eee;
+	color: #000;
+}
+
+#fav-button{
+	text-transform: uppercase;
+}
+
+#github{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+	color:black;
+	font-size:15px;
+}
+
+footer{
+	text-align:center;
+	color:#DCDCDC;
+	font-size:10px;
+	margin:15px 0 10px 0;
+	font-style: italic;
+}
+
+footer a{
+	color:#DCDCDC;
+}
