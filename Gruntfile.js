@@ -215,16 +215,16 @@ module.exports = function (grunt) {
     uglify: {
       dist: {
         files: {
-          '<%= config.dist %>/special_scripts/background.js': [
-            '<%= config.dist %>/special_scripts/jquery.min.js',
-            '<%= config.dist %>/special_scripts/storage.js',
-            '<%= config.dist %>/special_scripts/background.js'
+          '<%= config.dist %>/js/background.js': [
+            '<%= config.dist %>/js/jquery.min.js',
+            '<%= config.dist %>/js/storage.js',
+            '<%= config.dist %>/js/background.js'
           ],
-          '<%= config.dist %>/special_scripts/inject.js': [
-            '<%= config.dist %>/special_scripts/inject.js'
+          '<%= config.dist %>/js/inject.js': [
+            '<%= config.dist %>/js/inject.js'
           ],
-          '<%= config.dist %>/special_scripts/storage.js': [
-            '<%= config.dist %>/special_scripts/storage.js'
+          '<%= config.dist %>/js/storage.js': [
+            '<%= config.dist %>/js/storage.js'
           ]
         }
       }
@@ -248,7 +248,7 @@ module.exports = function (grunt) {
             'styles/{,*/}*.css',
             'styles/fonts/{,*/}*.*',
             'icons/*',
-            'special_scripts/*',
+            'js/*',
             '_locales/{,*/}*.json',
           ]
         }]
@@ -273,7 +273,7 @@ module.exports = function (grunt) {
         options: {
           buildnumber: true,
           background: {
-            target: 'special_scripts/background.js'
+            target: 'js/background.js'
           }
         },
         src: '<%= config.app %>',
@@ -287,7 +287,7 @@ module.exports = function (grunt) {
         options: {
           archive: function() {
             var manifest = grunt.file.readJSON('app/manifest.json');
-            return 'package/markticle-demo-' + manifest.version + '.zip';
+            return 'package/bookmark-collections-' + manifest.version + '.zip';
           }
         },
         files: [{
