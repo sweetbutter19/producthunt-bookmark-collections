@@ -1,7 +1,7 @@
 {
     "name": "Product Hunt Bookmark Collections",
     "description": "Bookmark and save your favorite collections",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "manifest_version": 2,
     "icons": {
         "19": "icons/icon-19.png",

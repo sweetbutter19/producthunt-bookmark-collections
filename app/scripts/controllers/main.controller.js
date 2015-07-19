@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('bookmark-collections').controller('MainController', function($scope, StorageService) {
+angular.module('bookmark-collections').controller('MainController', ['$scope', 'StorageService', function($scope, StorageService) {
 	$scope.bookmarks = StorageService.get().reverse();
 
 	$scope.remove = function(url) {
@@ -12,4 +12,4 @@ angular.module('bookmark-collections').controller('MainController', function($sc
 		}
 	};
 
-});
+}]);
