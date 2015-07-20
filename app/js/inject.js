@@ -12,13 +12,15 @@ $(document).ready(function() {
 		$('.page-header--buttons').append('<div id="remove-fav-button" class="button v-yellow" style="' + styles + '">'+ svg_added +' Remove</div>');
 	}
 
+	console.log($(".Collection").attr('data-react-props'));
+
 	/*
 	 * Get data about the collection
 	 * title, url, username
 	 */
 	function getCollectionData(){
 		var title = $(".page-header--title").text();
-		var url = window.location.href;
+		var url = window.location.href.replace(/^https?:\/\//,'http://');
 		var tmp = $(".page-header--avatar a").attr('href');
 		var user;
 
@@ -50,9 +52,6 @@ $(document).ready(function() {
 		addFavButton();
 	});
 
-	/*
-	 * If this collection is already bookmark
-	 */
 	chrome.extension.sendMessage({
 		action : 'fav',
 		data: getCollectionData()

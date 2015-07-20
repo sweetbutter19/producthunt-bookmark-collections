@@ -1,12 +1,12 @@
 'use strict';
 
 var collectionStorageService = function() {
-  var lsName = 'collections';
-  var data = localStorage.getItem(lsName) ? JSON.parse(localStorage.getItem(lsName)) : [];
+    var lsName = 'collections';
+    var data = localStorage.getItem(lsName) ? JSON.parse(localStorage.getItem(lsName)) : [];
 
-  return {
+    return {
 
-		get: function() {
+        get: function() {
 			return data;
 		},
 

@@ -1,7 +1,7 @@
 {
     "name": "Product Hunt Bookmark Collections",
     "description": "Bookmark and save your favorite collections",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "manifest_version": 2,
     "icons": {
         "19": "icons/icon-19.png",
@@ -19,8 +19,8 @@
     "content_scripts": [
         {
             "matches": [
-                "http://www.producthunt.com/*/collections/*",
-                "http://www.producthunt.com/e/*"
+                "*://www.producthunt.com/*/collections/*",
+                "*://www.producthunt.com/e/*"
             ],
             "js": [
                 "js/jquery.min.js",
